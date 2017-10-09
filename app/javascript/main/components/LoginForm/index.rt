@@ -1,0 +1,43 @@
+<rt-import name="Container" from="reactstrap"/>
+<rt-import name="Row" from="reactstrap"/>
+<rt-import name="Col" from="reactstrap"/>
+<rt-import name="CardGroup" from="reactstrap"/>
+<rt-import name="Card" from="reactstrap"/>
+<rt-import name="CardBlock" from="reactstrap"/>
+<rt-import name="Button" from="reactstrap"/>
+<rt-import name="FormGroup" from="reactstrap"/>
+<rt-import name="Field" from="redux-form"/>
+<rt-import name="renderField" from="./index.tsx"/>
+
+<div className="app flex-row align-items-center">
+  <Container>
+    <Row className="justify-content-center">
+      <Col md="5">
+        <CardGroup className="mb-0">
+          <Card className="p-4">
+            <CardBlock className="card-body">
+              <h1>Login</h1>
+              <p className="text-muted">Sign In to your account</p>
+              <form onSubmit={this.props.handleSubmit}>
+                <div rt-if="this.props.error">
+                  <strong>{this.props.error}</strong>
+                </div>
+                <FormGroup>
+                  <Field name="username" component={renderField} type="email" placeholder="Email"/>
+                </FormGroup>
+                <FormGroup>
+                  <Field name="password" component={renderField} type="password" placeholder="Password"/>
+                </FormGroup>
+                <Row>
+                  <Col xs="6">
+                    <Button type="submit" color="primary" className="px-4">Login</Button>
+                  </Col>
+                </Row>
+              </form>
+            </CardBlock>
+          </Card>
+        </CardGroup>
+      </Col>
+    </Row>
+  </Container>
+</div>
