@@ -1,0 +1,31 @@
+<rt-import name="NavbarBrand" from="reactstrap"/>
+<rt-import name="Dropdown" from="reactstrap"/>
+<rt-import name="DropdownMenu" from="reactstrap"/>
+<rt-import name="DropdownItem" from="reactstrap"/>
+<rt-import name="Nav" from="reactstrap"/>
+<rt-import name="NavItem" from="reactstrap"/>
+<rt-import name="NavLink" from="reactstrap"/>
+<rt-import name="DropdownToggle" from="reactstrap"/>
+
+<header className="app-header navbar">
+  <NavbarBrand href="#">APP</NavbarBrand>
+  <Nav className="d-md-down-none" navbar={true}>
+    <NavItem className="px-3">
+      <NavLink href="#">Dashboard</NavLink>
+    </NavItem>
+  </Nav>
+  <Nav className="ml-auto" navbar={true}>
+    <NavItem>
+      <Dropdown isOpen={this.state.dropdownOpen} toggle="{() => this.toggle()}">
+        <DropdownToggle className="nav-link dropdown-toggle">
+          <span className="d-md-down-none">{this.props.username}</span>
+        </DropdownToggle>
+        <DropdownMenu right={true}>
+          <DropdownItem onClick="{() => this.handleLogout()}">
+            <i className="fa fa-lock" />Logout
+          </DropdownItem>
+        </DropdownMenu>
+      </Dropdown>
+    </NavItem>
+  </Nav>
+</header>

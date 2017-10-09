@@ -40,7 +40,7 @@ export const loginSuccess = (auth: AuthState): LoginSuccess => {
 export const logoutRequest = (): ThunkAction<void, AuthState, void> => {
   return (dispatch: Dispatch<AuthState>) => {
     dispatch(logout());
-    dispatch(push('/login'));
+    dispatch(push('/admin/login'));
   };
 };
 
