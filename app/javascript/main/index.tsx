@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <AppContainer />
       </ConnectedRouter>
     </Provider>,
-    document.getElementById('root')
+    document.body.appendChild(document.createElement('div'))
   )
 })
 
