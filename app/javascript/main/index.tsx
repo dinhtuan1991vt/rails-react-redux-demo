@@ -7,6 +7,8 @@ import AppContainer from './containers/AppContainer';
 
 import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import './styles/CoreUI.css';
+import './styles/spinner.css';
 
 document.addEventListener('DOMContentLoaded', () => {
   render(
